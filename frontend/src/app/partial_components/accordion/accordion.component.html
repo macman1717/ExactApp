@@ -1,0 +1,14 @@
+<div ngbAccordion class="custom-accordion-header" [class.last-accordion]='last'>
+  <div ngbAccordionItem>
+    <h2 ngbAccordionHeader>
+      <button class="custom-accordion-button" ngbAccordionButton>{{ text }}</button>
+    </h2>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody>
+        <ng-template>
+          <ng-content></ng-content>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

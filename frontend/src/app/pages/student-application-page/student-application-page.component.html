@@ -1,0 +1,69 @@
+<app-header [headerLinks]=headerLinks></app-header>
+<app-content>
+  @if(applicationSubmitted){
+    <h2>Thank you for submitting your Application to the EXACT scholars program.</h2>
+    <p>Please click <a href="/exact">HERE</a> if you are not redirected to the home page.</p>
+  } @else {
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="email" formControlName="email" [ngClass]="{'invalid': profileForm.controls['email'].invalid && (profileForm.controls['email'].touched || profileForm.controls['email'].dirty || submitPressed)}">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="formContainer">
+      <div class="mb-3 w-50 p-1">
+        <label for="studentFirstName" class="form-label">Enter your First name</label>
+        <input type="text" class="form-control" id="studentFirstName" formControlName="firstName" [ngClass]="{'invalid': profileForm.controls['firstName'].invalid && (profileForm.controls['firstName'].touched || profileForm.controls['firstName'].dirty || submitPressed)}">
+      </div>
+      <div class="mb-3 w-50 p-1">
+        <label for="studentLastName" class="form-label">Enter your Last name</label>
+        <input type="text" class="form-control" id="studentLastName" formControlName="lastName" [ngClass]="{'invalid': profileForm.controls['lastName'].invalid && (profileForm.controls['lastName'].touched || profileForm.controls['lastName'].dirty || submitPressed)}">
+      </div>
+    </div>
+    <div class="formContainer">
+      <div class="mb-3 w-50 p-1">
+        <label for="student900Number" class="form-label">Enter your 900 number</label>
+        <input type="text" class="form-control" id="student900Number" formControlName="stuID" [ngClass]="{'invalid': profileForm.controls['stuID'].invalid && (profileForm.controls['stuID'].touched || profileForm.controls['stuID'].dirty || submitPressed)}">
+      </div>
+      <div class="mb-3 w-50 p-1">
+        <label for="studentPhone" class="form-label">Enter your phone number</label>
+        <input type="text" class="form-control" id="studentPhone" formControlName="phoneNum" [ngClass]="{'invalid': profileForm.controls['phoneNum'].invalid && (profileForm.controls['phoneNum'].touched || profileForm.controls['phoneNum'].dirty || submitPressed)}">
+      </div>
+    </div>
+    <div class="formContainer">
+      <div class="mb-3 w-50 p-1">
+        <label for="scholarLevel" class="form-label">Enter your scholar level</label>
+<!--        <input type="" class="form-control" id="scholarLevel" formControlName="scholarLevel">-->
+        <select class="form-select" aria-label="Default select example" id="scholarLevel" formControlName="level" [ngClass]="{'invalid':  profileForm.controls['level'].invalid && (profileForm.controls['level'].touched || profileForm.controls['level'].dirty || submitPressed)}">
+          <option [selected]="true">Open this select menu</option>
+          <option value="participant">Participant</option>
+          <option value="junior">Practitioner</option>
+          <option value="senior">Professional</option>
+        </select>
+      </div>
+      <div class="mb-3 w-50 p-1">
+        <label for="numOfCredits" class="form-label">Enter your number of earned credits</label>
+        <input type="number" class="form-control" id="numOfCredits" formControlName="earnedCred" [ngClass]="{'invalid': profileForm.controls['earnedCred'].invalid && (profileForm.controls['earnedCred'].touched || profileForm.controls['earnedCred'].dirty || submitPressed)}">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="SLandSPortfolio" class="form-label">Enter the link to your SL&S ePortfolio</label>
+      <input type="text" class="form-control" id="SLandSPortfolio" formControlName="eportLink" [ngClass]="{'invalid': profileForm.controls['eportLink'].invalid && (profileForm.controls['eportLink'].touched || profileForm.controls['eportLink'].dirty || submitPressed)}">
+    </div>
+    <p>Do you provide permission to have your name listed on the public website as an EXACT Scholar?</p>
+    <div class="form-check">
+      <div id="permissionButtons">
+        <input class="form-check-input" type="checkbox" name="public" value="true" id="permissionYesBox" formControlName="public" [ngClass]="{'invalid': profileForm.controls['public'].invalid && (profileForm.controls['public'].touched || profileForm.controls['public'].dirty || submitPressed)}">
+        <label class="form-check-label" for="permissionYesBox">
+          Yes
+        </label>
+    </div>
+    </div>
+    <div id="submitBtnContainer">
+      <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+    }
+</app-content>
+<app-footer></app-footer>

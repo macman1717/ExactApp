@@ -1,0 +1,78 @@
+<header>
+    <div class="site-anchors">
+        <div class="header-wrapper d-flex align-items-center">
+            <div class="header-logo d-flex align-items-center me-3">
+                <a href="https://ggc.edu">
+                    <img class="header-image" src="https://www.ggc.edu/themes/custom/ggc_site_studio/logo.svg" alt="GGC logo">
+                    <img class="header-tagline" src="https://www.ggc.edu/sites/default/files/Tagline%20for%20Header.jpg" alt="GGC tagline">
+                </a>
+            </div>
+
+            <div class="nav-links d-flex align-items-center mx-auto">
+                <ul class="nav nav-pills mb-0">
+                    <li class="me-4"><a class="nav-link" href="https://ggc.elluciancrmrecruit.com/Apply/Account/Create?_gl=1*1nv99ig*_ga*MTk1NzUzMTE5OC4xNzMxNDQ2Njg5*_ga_E559LJ4MFH*MTczMTQ0NjMyNy45Ni4xLjE3MzE0NDg2MTIuMC4wLjA.&_ga=2.77173331.739673562.1731446689-1957531198.1731446689">REQUEST INFO</a></li>
+                    <li class="me-4"><a class="nav-link" href="https://ggc.edu/admissions/how-to-apply">APPLY</a></li>
+                    <li class="me-4"><a class="nav-link" href="https://ggc.edu/admissions/visit-and-learn-about-ggc">VISIT</a></li>
+                    <li class="me-4"><a class="nav-link" href="https://www.ggcfoundation.org/giving">GIVE</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              INFO FOR...
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="https://ggc.edu/students">students</a></li>
+                              <li><a class="dropdown-item" href="https://ggc.edu/academics/commencement/graduates">graduates</a></li>                           
+                              <li><a class="dropdown-item" href="https://ggc.edu/parents">parents and family</a></li>                          
+                              <li><a class="dropdown-item" href="https://ggc.edu/faculty-and-staff">faculty/staff</a></li>                           
+                              <li><a class="dropdown-item" href="https://ggc.edu/community">community</a></li>                          
+                              <li><a class="dropdown-item" href="https://ggc.edu/alumni-association">alumni</a></li>
+                            </ul>                           
+                          </div>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="ms-auto">
+                <p class="login-text mb-0">
+                    @if (authService.isLoggedIn()) {
+                        <button class="btn log" (click)="onLogout()">LOGOUT</button>
+                    } @else {
+                        <a href="/exact/login" class="btn log">LOGIN</a>
+                    }
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<div class="container-fluid p-0 position-relative">
+    <img class="w-100" style="object-fit: cover; height: 400px;" src="https://www.ggc.edu/sites/default/files/styles/banner_1600_x_400_/public/2022-11/hero_admissions_walking_1600x400.jpg?h=680c2ec9&itok=NjkG--YH" alt="">
+    <div class="position-absolute top-50 start-50 translate-middle max75 text-start" style="min-width: 350px;">
+        <hgroup class="image-banner-hgroup">
+            @if (headerLinks.length > 1) {
+                <span class="image-banner-span">{{ headerLinks[headerLinks.length - 2].title }}</span>
+            }
+            <h1 class="image-banner-h1">{{ headerLinks[headerLinks.length - 1].title }}</h1>
+        </hgroup>
+        <nav class="breadcrumb-container">
+            <ul class="breadcrumb-list">
+                @if (headerLinks.length > 1) {
+                    <li>
+                        <a class="breadcrumb-link" [href]="headerLinks[headerLinks.length - 2].link">
+                            {{ headerLinks[headerLinks.length - 2].title }}
+                        </a>
+                    </li>
+                }
+                <li>
+                    <a class="breadcrumb-link" [href]="headerLinks[headerLinks.length - 1].link">
+                        {{ headerLinks[headerLinks.length - 1].title }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

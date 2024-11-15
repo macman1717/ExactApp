@@ -1,0 +1,21 @@
+.custom-accordion-header  {
+    border-top-width: 0.0625rem !important;
+    border-top-style: solid !important;
+    border-top-color: rgb(233, 233, 233)!important;
+    --bs-accordion-border-width: 0;
+    --bs-accordion-active-bg: none;
+}
+
+.custom-accordion-button {
+    color: rgb(0, 112, 74);
+}
+
+.custom-accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.last-accordion {
+    border-bottom-width: 0.0625rem !important;
+    border-bottom-style: solid !important;
+    border-bottom-color: rgb(233, 233, 233) !important;
+}

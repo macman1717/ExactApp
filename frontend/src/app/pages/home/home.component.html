@@ -1,0 +1,85 @@
+<!--app.component.html-->
+
+<app-header [headerLinks]="headerLinks"></app-header>
+<app-content>
+    @if (content) {
+      <app-editable-content webpage="home" sectionNum="1"></app-editable-content>
+      <!-- Embedded Video -->
+      <div class="ratio ratio-16x9 container">
+        <iframe id="kaltura_player"
+          [src]="content.embedded1 | safe: 'resourceUrl'"
+          width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0" title="What is the EXACT plan?">
+        </iframe>
+      </div>
+
+      <br/>
+
+      <!-- Embedded Powerpoint -->
+      <div class="ratio ratio-16x9 container">
+        <iframe
+          [src]="content.embedded2 | safe: 'resourceUrl'"
+          frameborder="0"
+          width="1280"
+          height="749"
+          allowfullscreen="true"
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+        ></iframe>
+      </div>
+
+      <app-editable-content webpage="home" sectionNum="2">
+
+      </app-editable-content>
+    }
+      <app-button-link
+        exactURL="exact/experiential-learning"
+        text="LEARN MORE ABOUT EXPERIENTIAL LEARNING"
+      ></app-button-link>
+      <br /><br />
+      <app-button-link
+        exactURL="exact/scholars"
+        text="LEARN MORE ABOUT THE EXACT SCHOLARS PROGRAM"
+      ></app-button-link>
+      <br /><br />
+
+      <app-accordion text="Quality Enhancement Plan (QEP)">
+        <p>Placeholder QEP</p>
+      </app-accordion>
+
+      <app-accordion text="EXACT Library">
+        <p>Placeholder Library</p>
+        <app-button-link
+          exactURL="exact/library"
+          text="EXACT library"
+        ></app-button-link>
+      </app-accordion>
+
+      <app-accordion text="EXACT Plan Team">
+        <p>Placeholder Team</p>
+        <app-button-link
+          exactURL="exact/team"
+          text="learn more about the EXACT team"
+        ></app-button-link>
+      </app-accordion>
+
+      <app-accordion text="Goals & Results">
+        <p> Placeholder Goals</p>
+        <app-button-link
+          exactURL="exact/goals"
+          text="Goals and Results"
+        ></app-button-link>
+      </app-accordion>
+
+      <app-accordion text="Recent Stories" [last]="true">
+        <p>Placeholder Stories</p>
+        <app-button-link
+          exactURL="exact/recent-stories"
+          text="Recent Stories"
+        ></app-button-link>
+      </app-accordion>
+
+</app-content>
+<app-footer></app-footer>

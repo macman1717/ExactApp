@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(244, 244, 243);
+}
+
+.large-text {
+  font-size: 1.5rem;
+  line-height: 2;
+  font-weight: 100;
+  letter-spacing: 0.0625rem;
+}
+
+* {
+  font-family: "Avenir", "Open Sans", Arial, sans-serif;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+}
+
+h2, h4 {
+  color: #00704A;
+
+}

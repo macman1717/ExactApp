@@ -1,0 +1,328 @@
+<app-header [headerLinks]="headerLinks"></app-header>
+<app-content>
+
+    <h2>Accepted Recent Stories</h2>
+    @if (acceptedStories.length > 0) {
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Content</th>
+                <th scope="col">Date Posted</th>
+                <th scope="col">Visible</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (story of acceptedStories2DArray[currentAcceptedStoryPage]; track story._id) {
+                    <tr id="approvedRecentStory{{acceptedStories.indexOf(story)}}">
+                        <td>{{ story.firstName }} {{ story.lastName }}</td>
+                        <td>{{ story.email }}</td>
+                        <td>{{ story.content }}</td>
+                        <td>{{ story.postDate }}</td>
+                        <td>{{ story.visible }}</td>
+                        <td>
+
+                            @if (!story.visible) {
+                                <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onApprovedStoryShow(story)">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            } @else {
+                                <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onApprovedStoryHide(story)">
+                                    <i class="material-icons">visibility_off</i>
+                                </button>
+                            }
+
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onApprovedStoryDelete(story)">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (acceptedStories2DArray.length > 1) {
+            <nav aria-label="Page navigation example">  
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentAcceptedStoryPage === 0">
+                    <button class="page-link" (click)="changeAcceptedStoryPage(currentAcceptedStoryPage - 1)">Previous</button>
+                </li>
+
+                @for (subArray of acceptedStories2DArray; track $index) {
+                    <li class="page-item" [class.active]="$index === currentAcceptedStoryPage">
+                        <button class="page-link" (click)="changeAcceptedStoryPage($index)">{{ $index + 1 }}</button>
+                    </li>
+                }
+
+                <li class="page-item" [class.disabled]="currentAcceptedStoryPage === acceptedStories2DArray.length - 1">
+                    <button class="page-link" (click)="changeAcceptedStoryPage(currentAcceptedStoryPage + 1)">Next</button>
+                </li>
+            </ul>
+            </nav>
+        }
+    } @else {
+        <p>There are no pending recent stories.</p>
+    }
+
+    <br>
+    <h2>Pending Recent Stories</h2>
+    @if (stories.length > 0) {
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Content</th>
+                <th scope="col">Date Posted</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (story of stories2DArray[currentStoryPage]; track story._id) {
+                    <tr id="pendingRecentStory{{stories.indexOf(story)}}">
+                        <td>{{ story.firstName }} {{ story.lastName }}</td>
+                        <td>{{ story.email }}</td>
+                        <td>{{ story.content }}</td>
+                        <td>{{ story.postDate }}</td>
+                        <td>
+
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onStoryApprove(story)">
+                                <i class="material-icons">check</i>
+                            </button>
+
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onStoryDelete(story)">
+                                <i class="material-icons">delete</i>
+                            </button>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        @if (stories2DArray.length > 1) {
+            <nav aria-label="Page navigation example">  
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentStoryPage === 0">
+                    <button class="page-link" (click)="changeStoryPage(currentStoryPage - 1)">Previous</button>
+                </li>
+
+                @for (subArray of stories2DArray; track $index) {
+                    <li class="page-item" [class.active]="$index === currentStoryPage">
+                        <button class="page-link" (click)="changeStoryPage($index)">{{ $index + 1 }}</button>
+                    </li>
+                }
+
+                <li class="page-item" [class.disabled]="currentStoryPage === stories2DArray.length - 1">
+                    <button class="page-link" (click)="changeStoryPage(currentStoryPage + 1)">Next</button>
+                </li>
+            </ul>
+            </nav>
+        }
+    } @else {
+        <p>There are no pending recent stories.</p>
+    }
+
+    <br>
+    <h2>Current Scholars</h2>
+    @if (acceptedApplications.length > 0) {
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">StudentID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone #</th>
+                <th scope="col">Level</th>
+                <th scope="col">Credits</th>
+                <th scope="col">EPort Link</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (app of acceptedApplications2DArray[currentAcceptedApplicationPage]; track app._id) {
+                    <tr id="pendingApplicant{{acceptedApplications.indexOf(app)}}">
+                        <td>{{ app.firstName }} {{ app.lastName }}</td>
+                        <td>{{ app.stuID }}</td>
+                        <td>{{ app.email }}</td>
+                        <td>{{ app.phoneNum }}</td>
+                        <td>{{ app.level }}</td>
+                        <td>{{ app.earnedCred }}</td>
+                        <td><a [href]="app.eportLink">Link</a></td>
+                        <td>
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onAcceptedAppDelete(app)">
+                                <i class="material-icons">delete</i>
+                            </button>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        
+        @if (acceptedApplications2DArray.length > 1) {
+            <nav aria-label="Page navigation example">  
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentAcceptedApplicationPage === 0">
+                    <button class="page-link" (click)="changeAcceptedApplicationPage(currentAcceptedApplicationPage - 1)">Previous</button>
+                </li>
+
+                @for (subArray of acceptedApplications2DArray; track $index) {
+                    <li class="page-item" [class.active]="$index === currentAcceptedApplicationPage">
+                        <button class="page-link" (click)="changeAcceptedApplicationPage($index)">{{ $index + 1 }}</button>
+                    </li>
+                }
+
+                <li class="page-item" [class.disabled]="currentAcceptedApplicationPage === acceptedApplications2DArray.length - 1">
+                    <button class="page-link" (click)="changeAcceptedApplicationPage(currentAcceptedApplicationPage + 1)">Next</button>
+                </li>
+            </ul>
+            </nav>
+        }
+    } @else {
+        <p>There are no current scholars.</p>
+    }
+
+    <br>
+    <h2>Pending Student Applications</h2>
+    @if (applications.length > 0) {
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">StudentID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone #</th>
+                <th scope="col">Level</th>
+                <th scope="col">Credits</th>
+                <th scope="col">EPort Link</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (app of applications2DArray[currentApplicationPage]; track app._id) {
+                    <tr id="pendingApplicant{{applications.indexOf(app)}}">
+                        <td>{{ app.firstName }} {{ app.lastName }}</td>
+                        <td>{{ app.stuID }}</td>
+                        <td>{{ app.email }}</td>
+                        <td>{{ app.phoneNum }}</td>
+                        <td>{{ app.level }}</td>
+                        <td>{{ app.earnedCred }}</td>
+                        <td><a [href]="app.eportLink">Link</a></td>
+                        <td>
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onAppApprove(app)">
+                                <i class="material-icons">check</i>
+                            </button>
+
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onAppReject(app)">
+                                <i class="material-icons">block</i>
+                            </button>
+
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onAppDelete(app)">
+                                <i class="material-icons">delete</i>
+                            </button>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        
+        @if (applications2DArray.length > 1) {
+            <nav aria-label="Page navigation example">  
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentApplicationPage === 0">
+                    <button class="page-link" (click)="changeApplicationPage(currentApplicationPage - 1)">Previous</button>
+                </li>
+
+                @for (subArray of applications2DArray; track $index) {
+                    <li class="page-item" [class.active]="$index === currentApplicationPage">
+                        <button class="page-link" (click)="changeApplicationPage($index)">{{ $index + 1 }}</button>
+                    </li>
+                }
+
+                <li class="page-item" [class.disabled]="currentApplicationPage === applications2DArray.length - 1">
+                    <button class="page-link" (click)="changeApplicationPage(currentApplicationPage + 1)">Next</button>
+                </li>
+            </ul>
+            </nav>
+        }
+    } @else {
+        <p>There are no rejected student applications.</p>
+    }
+
+
+
+
+    <br>
+    <h2>Student Applications Needing Revision</h2>
+    @if (rejectedApplications.length > 0) {
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">StudentID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone #</th>
+                <th scope="col">Level</th>
+                <th scope="col">Credits</th>
+                <th scope="col">EPort Link</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (app of rejectedApplications2DArray[currentRejectedApplicationPage]; track app._id) {
+                    <tr id="pendingApplicant{{rejectedApplications.indexOf(app)}}">
+                        <td>{{ app.firstName }} {{ app.lastName }}</td>
+                        <td>{{ app.stuID }}</td>
+                        <td>{{ app.email }}</td>
+                        <td>{{ app.phoneNum }}</td>
+                        <td>{{ app.level }}</td>
+                        <td>{{ app.earnedCred }}</td>
+                        <td><a [href]="app.eportLink">Link</a></td>
+                        <td>
+                            <button class="btn-icon icon-trash d-inline-flex gap-2 align-items-center justify-content-center" (click)="onRejectedAppDelete(app)">
+                                <i class="material-icons">delete</i>
+                            </button>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        
+        @if (rejectedApplications2DArray.length > 1) {
+            <nav aria-label="Page navigation example">  
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentRejectedApplicationPage === 0">
+                    <button class="page-link" (click)="changeRejectedApplicationPage(currentRejectedApplicationPage - 1)">Previous</button>
+                </li>
+
+                @for (subArray of rejectedApplications2DArray; track $index) {
+                    <li class="page-item" [class.active]="$index === currentRejectedApplicationPage">
+                        <button class="page-link" (click)="changeRejectedApplicationPage($index)">{{ $index + 1 }}</button>
+                    </li>
+                }
+
+                <li class="page-item" [class.disabled]="currentRejectedApplicationPage === rejectedApplications2DArray.length - 1">
+                    <button class="page-link" (click)="changeRejectedApplicationPage(currentRejectedApplicationPage + 1)">Next</button>
+                </li>
+            </ul>
+            </nav>
+        }
+    } @else {
+        <p>There are no pending student applications.</p>
+    }
+
+
+</app-content>
+<app-footer></app-footer>

@@ -1,0 +1,75 @@
+<!--app.component.html-->
+
+<app-header [headerLinks]="headerLinks"></app-header>
+<app-content>
+  <app-editable-content webpage="recentStories" sectionNum="1">
+
+  </app-editable-content>
+  <div class="container">
+    <div class="row">
+      @for (story of stories; track story._id) {
+        <div class="col-12 col-sm-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">
+                {{ story.content }}
+              </p>
+              <h6 class="card-subtitle mb-2 text-muted">
+                - <b>{{ story.firstName }} {{ story.lastName }}</b>
+              </h6>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  <app-editable-content webpage="recentStories" sectionNum="2">
+
+
+
+  </app-editable-content>
+  <!-- Recent Stories Form -->
+   @if (submittedStory) {
+    <p>Story submitted!</p>
+   } @else {
+    <p>Have your own experience to share? Submit your story!</p>
+    <form [formGroup]="storyForm" (ngSubmit)="onSubmit()">
+        <div class="formContainer">
+          <div class="mb-3 w-50 p-1">
+            <label for="studentFirstName" class="form-label">Enter your first name</label>
+            <input type="text" class="form-control" id="studentFirstName" formControlName="firstName"
+                   [ngClass]="{'invalid': storyForm.controls['firstName'].invalid
+                   && (storyForm.controls['firstName'].touched|| storyForm.controls['firstName'].dirty || submitPressed)}">
+          </div>
+          <div class="mb-3 w-50 p-1">
+            <label for="studentLastName" class="form-label">Enter your last name</label>
+            <input type="text" class="form-control" id="studentLastName" formControlName="lastName"
+                   [ngClass]="{'invalid': storyForm.controls['lastName'].invalid
+                   && (storyForm.controls['lastName'].touched || storyForm.controls['lastName'].dirty || submitPressed)}">
+          </div>
+        </div>
+        <div class="formContainer">
+          <div class="mb-3 w-50 p-1">
+            <label for="email" class="form-label">Enter your email</label>
+            <input type="text" class="form-control" id="email" formControlName="email"
+                   [ngClass]="{'invalid': storyForm.controls['email'].invalid
+                   && (storyForm.controls['email'].touched || storyForm.controls['email'].dirty || submitPressed)}">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="content" class="form-label">Enter your story</label>
+          <textarea type="text" class="form-control" id="content" rows="4" formControlName="content"
+                    [ngClass]="{'invalid': storyForm.controls['content'].invalid
+                   && (storyForm.controls['content'].touched || storyForm.controls['content'].dirty || submitPressed)}"></textarea>
+        </div>
+
+
+        <div id="submitBtnContainer">
+          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+   }
+
+</app-content>
+<app-footer></app-footer>

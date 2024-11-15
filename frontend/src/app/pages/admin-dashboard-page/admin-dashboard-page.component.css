@@ -1,0 +1,15 @@
+.btn-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.btn-icon i {
+  font-size: 1.2rem;
+}
+
+.btn-icon:hover i {
+  color: #343a40;
+}

@@ -1,0 +1,47 @@
+.edit-border {
+  border: 2px solid #006845;
+}
+
+.editable-content-container {
+  position: relative;
+}
+
+.edit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #00704a;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.edit-btn:hover {
+  color: #004e34;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  padding: 0.5rem; 
+  border: 2px solid #006845; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.toolbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #00704a;
+  font-size: 1.25rem;
+}
+
+.toolbar-btn:hover {
+  color: #004e34;
+}

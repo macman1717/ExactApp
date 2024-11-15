@@ -1,0 +1,43 @@
+@if (editing) {
+    <div class="toolbar">
+        <button (click)="format('bold')" class="toolbar-btn" title="Bold">
+            <span class="material-icons">format_bold</span>
+        </button>
+        <button (click)="format('italic')" class="toolbar-btn" title="Italic">
+            <span class="material-icons">format_italic</span>
+        </button>
+        <button (click)="format('createLink')" class="toolbar-btn" title="Add Link">
+            <span class="material-icons">link</span>
+        </button>
+        <button (click)="format('insertOrderedList')" class="toolbar-btn" title="Numbered List">
+            <span class="material-icons">format_list_numbered</span>
+        </button>
+        <button (click)="format('insertUnorderedList')" class="toolbar-btn" title="Bulleted List">
+            <span class="material-icons">format_list_bulleted</span>
+        </button>
+        <button (click)="format('formatBlock', 'h2')" class="toolbar-btn" title="Header 2">
+            <span class="material-icons">title</span> H2
+        </button>
+        <button (click)="format('formatBlock', 'h4')" class="toolbar-btn" title="Header 4">
+            <span class="material-icons">title</span> H4
+        </button>
+    </div>
+}
+
+
+<div [contentEditable]="editing" [class.edit-border]="editing"
+     class="editable-content-container"
+     [id]="contentID"
+     >
+    @if (authService.isLoggedIn()) {
+        <button class="edit-btn" (click)="editing ? stopEditing(webpage,parseInt(sectionNum)) : startEditing()">
+            <span class="material-icons">
+              {{ editing ? 'save' : 'edit' }}
+            </span>
+        </button>
+    }
+  @if (htmlOutput){
+  <div id="outPutContent" [innerHTML]="htmlOutput.html | safe: 'html'" ></div>
+  }
+  <ng-content></ng-content>
+</div>

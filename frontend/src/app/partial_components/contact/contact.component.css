@@ -1,0 +1,10 @@
+.aside-container {
+    padding: 2.5rem 0 0 2.5rem;
+    max-width: 16.25rem;
+    min-width: 16.25rem;
+    display: block;
+}
+
+p a {
+    color: rgb(0, 112, 74);
+}

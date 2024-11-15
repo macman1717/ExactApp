@@ -1,0 +1,109 @@
+<app-header [headerLinks]="headerLinks"></app-header>
+
+<main class="form-signin my-4">
+
+  @if (otpVerified) {
+    @if (hasResetPassword) {
+      <h2>Successfully changed password!</h2>
+      <p>Please click <a href="/exact/login">HERE</a> if you are not redirected to the login page.</p>
+    } @else {
+      <form (submit)="onResetPassword()">
+        <h1 class="h3 mb-3 fw-normal">Change Password</h1>
+    
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingInput"
+            placeholder="password"
+            [(ngModel)]="newPassword"
+            name="password"
+          />
+          <label for="floatingInput">New Password</label>
+        </div>
+        
+        <br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Reset Password</button>
+      </form>
+    }
+  } @else {
+    @if (!isForgotPassword) {
+      <form (submit)="onSigninSubmit()">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="email"
+            [(ngModel)]="email"
+            name="email"
+          />
+          <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            [(ngModel)]="password"
+            name="password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+    
+        <button class="w-100 btn btn-lg btn-primary log" type="submit">Sign in</button>
+    
+        <p class="mt-3">
+          <a role="button" class="forgot-password" (click)="showForgotPasswordForm()">Forgot password?</a>
+        </p>
+      </form>
+    } @else {
+      <form (submit)="onForgotPasswordSubmit()">
+        <h1 class="h3 mb-3 fw-normal">Forgot Password</h1>
+  
+        @if (otpSent) {
+          <div>
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingOTP"
+                placeholder="OTP"
+                [(ngModel)]="otp"
+                name="otp"
+                required
+              />
+              <label for="floatingOTP">Enter OTP</label>
+            </div>
+            <br>
+            <button class="w-100 btn btn-lg btn-primary log" type="submit">Verify OTP</button>
+          </div>
+        } @else {
+          <div>
+            <div class="form-floating">
+              <input
+                type="email"
+                class="form-control"
+                id="floatingEmail"
+                placeholder="Email"
+                [(ngModel)]="forgotEmail"
+                name="forgotEmail"
+                required
+              />
+              <label for="floatingEmail">Enter your email</label>
+            </div>
+            <br>
+            <button class="w-100 btn btn-lg btn-primary log" type="submit">Send OTP</button>
+          </div>
+        }
+        
+        <button type="button" class="w-100 btn btn-link mt-2" (click)="cancelForgotPassword()">Back to Sign in</button>
+      </form>
+    }
+  }
+</main>
+
+<app-footer></app-footer>

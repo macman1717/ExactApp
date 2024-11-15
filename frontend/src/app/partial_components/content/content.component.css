@@ -1,0 +1,37 @@
+
+
+.main-content {
+    margin: -3.125rem auto 1.25rem auto;
+}
+
+.content-container {
+    padding: 6% 7%;
+    position: relative;
+    min-height: 1rem;
+    background-color: white;
+    display: block;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.content-container ::after {
+    content: " ";
+    border-width: 0.10625rem;
+    border-style: solid;
+    border-color: rgb(133, 196, 70);
+    position: absolute;
+    top: 0.9375rem;
+    bottom: 0.9375rem;
+    left: 0.9375rem;
+    right: 0.9375rem;
+    opacity: 0.75;
+}

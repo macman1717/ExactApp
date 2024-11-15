@@ -1,0 +1,22 @@
+.nav-item {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1em;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: white;
+  background-color: #222222;
+  border: blue;
+  border-radius: 0.4em;
+}
+
+table{
+  display: block;
+  overflow-x: auto;
+}
+
+nav{
+  padding: 1em;
+}

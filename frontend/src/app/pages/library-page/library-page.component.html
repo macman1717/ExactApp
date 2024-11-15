@@ -1,0 +1,36 @@
+<!--app.component.html-->
+
+
+<app-header [headerLinks]=headerLinks></app-header>
+<app-content>
+  <app-editable-content webpage="exactLibrary" sectionNum="1">
+
+
+  </app-editable-content>
+  <app-button-link exactURL = "exact/library" text="VISIT EXACT LIBRARY"></app-button-link>
+  <br><br><br><br>
+
+
+
+  <!-- Contributing Authors List -->
+  <h2>Contributing Authors</h2>
+  <app-image-with-text image_path="{{enviorment.apiURL}}/images/img.png"
+                       mainText="This team member's name and title"
+                       extraTitles="emailpath@email.com"
+                       subText="This is the description for the author">
+  </app-image-with-text>
+
+  <app-image-with-text image_path="{{enviorment.apiURL}}/images/img.png"
+                       mainText="This team member's name and title"
+                       extraTitles="emailpath@email.com"
+                       subText="This is the description for the author">
+  </app-image-with-text>
+
+  <app-image-with-text image_path="{{enviorment.apiURL}}/images/img.png"
+                       mainText="This team member's name and title"
+                       extraTitles="emailpath@email.com"
+                       subText="This is the description for the author">
+  </app-image-with-text>
+
+</app-content>
+<app-footer></app-footer>

@@ -1,0 +1,20 @@
+.formContainer {
+  display: flex;
+}
+
+#submitBtn{
+  width: 25%;
+}
+
+#submitBtnContainer{
+  display: flex;
+  justify-content: end;
+}
+
+#permissionButtons{
+  display: flex;
+}
+
+.invalid{
+  border: 3px solid red;
+}

@@ -1,0 +1,23 @@
+<aside class="aside-container">
+    <h4>Contact Us</h4>
+
+    <p><b>Address</b><br>1000 University Center Ln, Lawrenceville, GA 30043</p>
+    <p><b>Office</b><br>L-2119</p>
+    <p><b>Office Phone</b><br>678.407.5216</p>
+    <p><b>Soft phone</b><br>678.548.7283</p>
+
+    <p><a href="mailto:QEP@ggc.edu">ExperientialLearning&#64;ggc.edu</a></p>
+    <p><b>Email</b><br><a href="mailto:kperellg@ggc.edu">kperellg&#64;ggc.edu</a></p>
+
+    <br>
+    <app-button-link [thinButton]="true" text="FAQ" exactURL="exact/faq">
+    </app-button-link>
+
+    @if (authService.isLoggedIn()) {
+        <br>
+        <br>
+        <app-button-link [thinButton]="true" text="Admin" exactURL="exact/admin-dashboard">
+        </app-button-link>
+    }
+
+</aside>

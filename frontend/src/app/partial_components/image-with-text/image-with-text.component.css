@@ -1,0 +1,11 @@
+.outer {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid rgb(133, 196, 70);
+}
+
+img{
+  height: auto;
+  border-radius: 10%;
+  padding: 10px;
+}

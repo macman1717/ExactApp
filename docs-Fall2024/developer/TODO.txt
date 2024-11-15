@@ -1,0 +1,6 @@
+- Library Page
+- Faculty Toolbox Page
+- Fill out page contents when client knows what content goes there
+- Add "Explore More" Dropdown similar to ggc.edu
+- General Improvements (formatting, styling) & Fixes
+- Update API to require a user's token for requests

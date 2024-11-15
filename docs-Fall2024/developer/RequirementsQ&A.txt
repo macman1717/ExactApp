@@ -1,0 +1,23 @@
+This text file will be updated upon further meetings with the team and client.
+
+First meeting:
+    Q:Who will be visiting this website?
+    A:Faculty, Students, and the public. Slight differences will be needed for
+    each of these different types of users
+
+    Q:Will this be a stand-alone website or be a part of ggc.edu
+    A:A part of ggc.edu
+
+    Q:For user submitted quotes/wall of fame, will these post need admin approval?
+    A:Yes, and probably need to be sent to Dr. Perell-Gerson as she is in charge of EXACT
+
+    additional important information:
+    -site will need to be authenticated through GGC, a meeting is being set up with
+    IT member to help use the ggc authentication server for our web app.
+    -client likes the layout of ggc.edu with sub-menus breaking down into more specific
+    "end-point" pages. Specific experimental learning class info pages will not need to be
+    completed this semester.
+    -weekly meetings will be set up with client, Saturdays at 10:00am. If it's determined
+    to be overkill, meetings will become bi-weekly
+    -Plan is spend this week going over the requirements and creating a new document
+    with rough use cases and more specific requirements.

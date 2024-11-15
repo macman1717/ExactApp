@@ -1,0 +1,14 @@
+Global CSS File: styles.css [frontend/src/styles.css]
+Most styles are implemented in each component's respective CSS file to keep the code modular.
+
+Sean Nolan (worked on home, scholars, library, and experiential-learning pages):
+    1. large-text [frontend/src/styles.css]
+    2. accordion custom styles [frontend/src/app/partial_components/accordion/accordion.component.ss]
+
+Connor Griffin (worked on student toolbox, faculty toolbox, and team pages):
+    1. image-with-text component styles [frontend/src/app/partial_components/image-with-text/image-with-text.component.css]
+    2. button-link component styles [frontend/src/app/partial_components/button-link/button-link.component.css]
+
+Patrick Smith (worked on faq and goals and results pages):
+    1. contact component styles [frontend/src/app/partial_components/contact/contact.component.css]
+    2. goals-page styles [frontend/src/app/pages/goals-page/goals-page.components.css]

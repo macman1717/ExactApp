@@ -1,0 +1,69 @@
+The following features are ranked as 1 being the most important and 10 being the
+least.
+
+Importantly, the EXACT plan needs a website and since it is all about experiential
+learning, it would be great to have students build the website.
+The website needs to be eye-catching & easy to read & navigate.
+
+The following things are needed at a minimum for the website:
+
+    1. Home page with the EXACT plan content
+        -Link to actual QEP document
+
+    2. Home page about experiential learning & critical thinking
+        -Very public facing – why it is important
+        -Definition of each & then how work together
+        -Academic resources/websites
+        -Importance of reflection – video & written information
+
+    3. Page about the EXACT scholars student recognition program
+        -Need link to video about the program & written description of program & instructions
+        -Need link to application – behind GGC log in (need to be put into a SL&L course
+        -Information about instructions & video about ePortfolios
+        -List of EXACT scholars
+
+    4. Page for a Student Toolbox
+
+        -Importance of experiential learning & critical thinking to your future
+        -Importance of reflection
+        -Links to Student Affairs for service learning opportunities
+        -Links to Career Services – MCR modules
+        -Link back to EXACT scholars
+
+    5. Page for a Faculty & Staff Toolbox
+        -Current EXACT courses & activities
+        -Roles & responsibilities for course coordinators of EXACT courses,
+            Faculty Fellows, Assessment Team
+        -Link to policies & procedures
+        -Link to policies & procedures for applying for EXACT plan roles
+            (e.g. course coordinators, Faculty Fellows, Assessment Team)
+        -Link to EXACT plan team for questions, discussion, etc
+        -Instructions for proposing EXACT courses & application
+        -Bootcamp curriculum
+        -Instructions for submitting EXACT course materials
+        -Workshop calendar
+        -Ways to get involved with the EXACT plan
+        -Need links to important papers
+
+    6. Page about EXACT library
+        -Landing page??
+        -Link to the EXACT library
+        -Emails of authors
+        -Running list of contributing authors
+
+    7. Page about Goals & Results
+        -Link to annual reports – pdf files
+        -Link to newsletters – pdf files
+
+    8. Page about recent stories from faculty & students
+        -Wall of fame
+        -Senior quotes
+
+    9. Page about EXACT plan team
+
+    10. FAQ team
+
+IMPORTANT POINTS
+    -How to update information “live”  - where does it live
+    -What are links vs subpages
+    -Links to subpages vs word file
